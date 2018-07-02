@@ -1,0 +1,27 @@
+body{
+	background-color: #efefef;
+}
+
+.main{
+	min-height: 400px;
+	margin: 25px auto;
+	padding: 15px 0;
+	border-radius: 5px;
+	box-shadow:2px 2px 4px #888;
+	background-color: #fff;
+}
+
+.head{
+	height: 150px;
+}
+
+.table{
+	width: 95%;
+	margin: 0 auto;
+}
+
+
+
+.pagination-info{
+	display: none;
+}

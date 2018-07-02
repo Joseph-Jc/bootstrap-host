@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="css/host.css">
+</head>
+<body>
+<div id="toolbar" class="btn-group">
+	<button id="btn_add" type="button" class="btn btn-default" onclick="addVideoShow();">
+	    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+	</button>
+	<button id="btn_delete" type="button" class="btn btn-danger" onclick="delMemberVideo();">
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>选择删除
+	</button>
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<div class="main">
+<!-- 		<div class="head"></div> -->
+		<div class="table">
+			<table id="host_table"></table>
+		</div>
+	</div>
+</div>
+<div class="col-md-1"></div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript">
+	function AddFunctionAlty(value,row,index){
+		return[
+			'<button id="TableEditor" type="button" class="btn btn-default btn-xs">编辑</button> &nbsp;&nbsp;',
+			'<button id="TableDetail" type="button" class="btn btn-info btn-xs">详细</button> &nbsp;&nbsp;',
+			'<button id="TableEditor" type="button" class="btn btn-danger btn-xs">删除</button>'
+		].join("")
+	}
+	window.operateEvents={
+		"click #TableEditor":function(e,value,row,index){
+
+		},
+		"click #TableEditor":function(e,value,row,index){
+			$(this).parent().parent().remove();
+		}
+	}
+
+	$('#host_table').bootstrapTable({
+		striped: true,
+		pagination: true,
+		paginationLoop: true,
+		pageSize: 10,
+		pageList: [5, 10, 15, 20],
+		smartDisplay: true,
+		search: true,
+		toolbar: "#toolbar",
+		//searchText: '项目名称,域名',
+		//showHeader: true,
+		//showFooter: true,
+		//showToggle: true,
+		showColumns: true,
+		showRefresh: true,
+		//showPaginationSwitch: true,
+		//showFullscreen: true,
+		minimumCountColumns: 3,
+		idField: 'id',
+		//cardView: true,
+		//detailView: true,
+		//paginationVAlign: 'top',
+		//paginationHAlign: 'left',
+		//paginationDetailHAlign: 'right',
+		paginationPreText: '上一页',
+		paginationNextText: '下一页',
+		sortable: true,
+	    columns: [{
+	        field: 'id',
+	        title: '项目id',
+	        width: 50,
+	        align: 'center',
+	    }, {
+	        field: 'pro_name',
+	        title: '项目名称',
+	        width: 50,
+	        align: 'center',
+	    }, {
+	        field: 'domain_name',
+	        title: '域名',
+	        width: 40,
+	        align: 'center',
+	    }, {
+	        field: 'ip_address',
+	        title: 'ip地址',
+	        width: 40,
+	        align: 'center',
+	    }, {
+	        field: 'status_name',
+	        title: '状态',
+	        width: 40,
+	        align: 'center',
+	    }, {
+	        field: 'environment_name',
+	        title: '所属环境',
+	        width: 50,
+	        align: 'center',
+	    }, {
+	        field: 'remark',
+	        title: '备注',
+	        width: 150,
+	        align: 'center',
+	    }, {
+	    	field: 'Button',
+	    	title: '操作',
+	    	width: 150,
+	        align: 'center',
+	        formatter: AddFunctionAlty,
+	        events: operateEvents,	
+	    }],
+	    data: [{
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '好地方还是开发哈萨发'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: '商城网站',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }, {
+	        id: 1,
+	        pro_name: 'ip_address',
+	        domain_name: 'yii.host.com',
+	        ip_address: '192.168.1.111',
+	        environment_name: '测试环境',
+	        status_name: '禁用中',
+	        remark: '无'
+	    }]
+	});
+</script>
+</body>
+</html>
