@@ -20,8 +20,47 @@ body{
 	margin: 0 auto;
 }
 
-
-
 .pagination-info{
 	display: none;
+}
+
+.host-info li{
+	list-style-type: none;
+	width: 100%;
+	min-height: 50px;
+	line-height: 50px;
+	border-bottom: 1px dashed #e2e2e2;
+}
+
+.host-info li span{
+	width: 20%;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.host-info li p{
+	font-size: 14px;
+	width: 70%;
+	min-height: 10px;
+	overflow: auto;
+	margin-left: 30px;
+}
+
+.remark{
+	line-height: 28px;
+}
+
+.input-group{
+	margin: 0 auto;
+	width: 90%;
+}
+
+.input-group-addon{
+	width: 100px;
+}
+
+.input-group textarea{
+	resize: none;
 }

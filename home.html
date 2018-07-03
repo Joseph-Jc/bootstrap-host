@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
@@ -9,6 +10,120 @@
 	<link rel="stylesheet" type="text/css" href="css/host.css">
 </head>
 <body>
+<div class="modal fade" id="editorModel" tabindex="-1" role="dialog" aria-labelledby="editorModelLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="editorModelLabel">Host编辑</h4>
+			</div>
+			<div class="modal-body">
+				<form class="bs-example bs-example-form" role="form">
+					<div class="input-group">
+						<span class="input-group-addon">域名</span>
+						<input type="text" class="form-control" placeholder="域名">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">IP地址</span>
+						<input type="text" class="form-control" placeholder="IP地址">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">管理员账号</span>
+						<input type="text" class="form-control" placeholder="管理员账号">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">管理员密码</span>
+						<input type="text" class="form-control" placeholder="管理员密码">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">运行环境</span>
+						<select class="form-control"> 
+							<option>测试环境</option> 
+							<option>预发布环境</option> 
+							<option>发布环境</option> 
+						</select>
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">运行状态</span>
+						<select class="form-control"> 
+							<option>运行中</option> 
+							<option>禁用中</option> 
+						</select>
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">备注</span>
+						<textarea class="form-control" rows="7">发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发阿斯蒂芬撒发生范德萨发发的发</textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="detailModel" tabindex="-1" role="dialog" aria-labelledby="detailModelLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="detailModelLabel">Host详情</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="host-info">
+					<li>
+						<span>Host ID:</span>
+						<p>1</p>
+					</li>
+					<li>
+						<span>域名:</span>
+						<p>yii.basic.com</p>
+					</li>
+					<li>
+						<span>IP地址:</span>
+						<p>193.112.30.111</p>
+					</li>
+					<li>
+						<span>管理员账号:</span>
+						<p>yii.basic.com</p>
+					</li>
+					<li>
+						<span>管理员密码:</span>
+						<p>jkjfk342</p>
+					</li>
+					<li>
+						<span>运行环境:</span>
+						<p>测试环境</p>
+					</li>
+					<li>
+						<span>运行状态:</span>
+						<p>禁用中</p>
+					</li>
+					<li>
+						<span>备注:</span>
+						<p class="remark">菲菲姐哦我菲姐哦我剧哦爱舍科技论文聚隆科技阿科技路法兰克福燃料客服沙发菲姐哦我剧哦爱舍科技论文聚隆科技阿科技路法兰克福燃料客服沙发菲姐哦我剧哦爱舍科技论文聚隆科技阿科技路法兰克福燃料客服沙发菲姐哦我剧哦爱舍科技论文聚隆科技阿科技路法兰克福燃料客服沙发剧哦爱舍科技论文聚隆科技阿科技路法兰克福燃料客服沙发</p>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div id="toolbar" class="btn-group">
 	<button id="btn_add" type="button" class="btn btn-default" onclick="addVideoShow();">
 	    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
@@ -16,6 +131,35 @@
 	<button id="btn_delete" type="button" class="btn btn-danger" onclick="delMemberVideo();">
 		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>选择删除
 	</button>
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">运行环境
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li>
+				<a href="">测试环境</a>
+			</li>
+			<li>
+				<a href="">预发布环境</a>
+			</li>
+			<li>
+				<a href="">发布环境</a>
+			</li>
+		</ul>
+	</div>
+	<div class="btn-group">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">运行状态
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li>
+				<a href="">开启中</a>
+			</li>
+			<li>
+				<a href="">禁用中</a>
+			</li>
+		</ul>
+	</div>
 </div>
 <div class="col-md-1"></div>
 <div class="col-md-10">
@@ -32,18 +176,32 @@
 <script type="text/javascript" src="js/bootstrap-table.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-table-zh-CN.min.js"></script>
 <script type="text/javascript">
+	// function AddFunctionUser(value,row,index){
+	// 	return[
+	// 		'<button id="TableUserInfo" type="button" class="btn btn-info btn-xs">查看</button>'
+	// 	].join("")
+	// }
+	// window.userEvents={
+	// 	"click #TableUserInfo":function(e,value,row,index){
+
+	// 	}
+	// }
+
 	function AddFunctionAlty(value,row,index){
 		return[
 			'<button id="TableEditor" type="button" class="btn btn-default btn-xs">编辑</button> &nbsp;&nbsp;',
 			'<button id="TableDetail" type="button" class="btn btn-info btn-xs">详细</button> &nbsp;&nbsp;',
-			'<button id="TableEditor" type="button" class="btn btn-danger btn-xs">删除</button>'
+			'<button id="TableDelete" type="button" class="btn btn-danger btn-xs">删除</button> &nbsp;&nbsp;'
 		].join("")
 	}
 	window.operateEvents={
 		"click #TableEditor":function(e,value,row,index){
-
+			$('#editorModel').modal('show');
 		},
-		"click #TableEditor":function(e,value,row,index){
+		"click #TableDetail":function(e,value,row,index){
+			$('#detailModel').modal('show');
+		},
+		"click #TableDelete":function(e,value,row,index){
 			$(this).parent().parent().remove();
 		}
 	}
@@ -63,6 +221,7 @@
 		//showToggle: true,
 		showColumns: true,
 		showRefresh: true,
+		clickToSelect: true,
 		//showPaginationSwitch: true,
 		//showFullscreen: true,
 		minimumCountColumns: 3,
@@ -76,6 +235,8 @@
 		paginationNextText: '下一页',
 		sortable: true,
 	    columns: [{
+            checkbox: true,
+        }, {
 	        field: 'id',
 	        title: '项目id',
 	        width: 50,
@@ -95,7 +256,16 @@
 	        title: 'ip地址',
 	        width: 40,
 	        align: 'center',
-	    }, {
+	    }, 
+	    // {
+	    //     field: 'host_user',
+	    //     title: '账号信息',
+	    //     width: 30,
+	    //     align: 'center',
+	    //     formatter: AddFunctionUser,
+	    //     events: userEvents,	
+	    // }, 
+	    {
 	        field: 'status_name',
 	        title: '状态',
 	        width: 40,
